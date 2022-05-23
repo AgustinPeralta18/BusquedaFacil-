@@ -1,3 +1,100 @@
+
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+
+#menu li > a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3f3f3f;
+}
+
+#menu form > button{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#local{
+  background: #f3f3f3;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#numeros-local div{
+  padding: 0 20px 0 0;
+  height: 48px;
+}
+
+#numeros-local div:not(:last-child){
+  border-right: 2px solid #3f3f3f;
+}
+
+#numeros-local div:not(:first-child){
+  padding-left: 20px;
+}
+
+#numeros-local p{
+  margin: 0;
+}
+
+#bg-final{
+  position: relative;
+  top: -130px;
+}
+
+#seccion-final{
+  background-color: #273036;
+  min-height: 500px;
+  position: relative;
+}
+
+.wrapper{
+  width: 50%;
+  margin-left: 100px;
+  padding-top: 150px;
+}
+
+
 .carousel-inner{
-  max-height: 39rem;
+  max-height: 50rem;
+}
+
+.mapa{
+  background: url(../recursos/maps.png);
+  width: 100%;
+  width: 1800px;
+  height: 700px;
+}
+
+
+/*
+MEDIAS QUERIES PANTALLA
+*/
+
+#bg-final{
+  position: relative;
+  top: -110px;
+}
+
+@media(max-width:768px){
+  #intro{
+    width: 90% !important;
+  }
+}
+
+@media(max-width:1200px){
+  #local{
+    flex-wrap: wrap;
+    padding-top: 30px;
+  }
+
+  .wrapper{
+    width: 90%;
+    margin: auto;
+    padding-top: 50px;
+  }
 }
