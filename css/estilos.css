@@ -1,5 +1,5 @@
 
-
+/* EDICION DEL INDEX*/
 body{
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
@@ -43,12 +43,13 @@ body{
 
 #bg-final{
   position: relative;
-  top: -130px;
+  top: -50px;
+  margin-top: 50px;
 }
 
 #seccion-final{
   background-color: #273036;
-  min-height: 500px;
+  min-height: 100px;
   position: relative;
 }
 
@@ -70,20 +71,53 @@ body{
   height: 700px;
 }
 
+/* CSS DE IDES.HTML*/
+
+/* EDICION DE LA TABLA DONDE ESTAN LOS IDES */
 .image-ides{
   margin-right: 20px;
   margin-bottom: 20px;
-  width: 160px;
+  width: 220px;
+  height: 200px;
   float: left;
 }
 
 .parrafo-ides{
-  margin-top: 20px;
-  margin-bottom: 80px;
-  margin-right: 20px;
+  margin-right: 50px;
+}
+
+.margin-table{
+  margin: 10px;
 }
 
 
+/*
+EDICION DE LA TABLA DE APLICACIONES GRATUITAS
+*/
+
+.image-aplicacionesG{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 120px;
+  float: left;
+}
+
+/*
+EDICION DE TITULOS
+*/
+
+.titulos{
+  margin: 20px;
+}
+
+/*
+EDICION DE BOTONES DE LA PAGINA
+*/
+
+.btn-margin{
+  margin: 50px;
+}
 
 
 
@@ -91,10 +125,7 @@ body{
 MEDIAS QUERIES PANTALLA
 */
 
-#bg-final{
-  position: relative;
-  top: -110px;
-}
+
 
 @media(max-width:768px){
   #intro{
