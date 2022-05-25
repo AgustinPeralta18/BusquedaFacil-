@@ -70,6 +70,22 @@ body{
   height: 700px;
 }
 
+.image-ides{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 160px;
+  float: left;
+}
+
+.parrafo-ides{
+  margin-top: 20px;
+  margin-bottom: 80px;
+  margin-right: 20px;
+}
+
+
+
+
 
 /*
 MEDIAS QUERIES PANTALLA
