@@ -9,12 +9,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
   <link rel="stylesheet" href="../css/estilos.css">
-  <link rel="stylesheet" href="../css/ides.css">
 </head>
 
 <body>
+
+
+  <!-- FONDO DE LA PAGINA-->
+
+  
 
   <!-- MENU -->
 
@@ -62,15 +65,12 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="#">Ayuda</a>
+            <a class="nav-link active" href="./ayuda.html">Ayuda</a>
           </li>
 
         </ul>
 
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        
       </div>
     </div>
   </nav>
@@ -125,7 +125,7 @@
   </div>
 
   <!--TITULO-->
-  <h1 class="titulos blockquote fs-2">EDITORES DE TEXTO</h1>
+  <h1 class="text-center titulos blockquote fs-2">EDITORES DE TEXTO</h1>
 
   <!-- TABLA DE IDES -->
   <table class="table-primary border-3 margin-table">
@@ -134,7 +134,7 @@
       <!-- VISUAL STUDIO CODE -->
       <tr>
         <th scope="col">
-          <h2 class="p-3 fs-2 border-top border-dark border-3 text-center">Visual Studio Code</h2>
+          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Visual Studio Code</h2>
           <p class="parrafo-ides"><img src="../recursos/Visual_Studio_Code.svg.png" class="image-ides" alt="..."><br>
             Visual Studio Code es un editor de texto para programar, es uno de los mas usados en el mundo. Este editor
             de texto tiene muchisimas funciones y es muy editable!
@@ -153,7 +153,7 @@
       <!-- SUBLIME TEXT -->
       <tr>
         <th scope="col">
-          <h2 class="p-3 fs-2 border-top border-dark border-3 text-center">Sublime Text</h2>
+          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Sublime Text</h2>
           <p class="parrafo-ides"><img src="../recursos/sublime-text.png" class="image-ides" alt="..."><br>
             Sublime Text es un editor de texto y editor de código fuente. Está escrito en C++ y Python para los plugins.
             Desarrollado originalmente como una extensión de Vim, con el tiempo fue creando una identidad propia. Aún
@@ -172,7 +172,7 @@
       <!-- INTELLIJ IDEA -->
       <tr>
         <th scope="row">
-          <h2 class="p-3 fs-2 border-top border-dark border-3 text-center">IntelliJ IDEA</h2>
+          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">IntelliJ IDEA</h2>
           <p class="parrafo-ides"><img src="../recursos/intelij.png" class="image-ides" alt="..."><br>
             IntelliJ IDEA es un entorno de desarrollo integrado para el desarrollo de programas informáticos. Es
             desarrollado por JetBrains, y está disponible en dos ediciones:
@@ -190,7 +190,7 @@
       <!-- NETBEANS -->
       <tr>
         <th scope="col">
-          <h2 class="p-3 fs-2 border-top border-dark border-3 text-center">NetBeans</h2>
+          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">NetBeans</h2>
           <p class="parrafo-ides"><img src="../recursos/netbeans.png" class="image-ides" alt="..."><br>
             NetBeans es un entorno de desarrollo integrado libre, hecho principalmente para el lenguaje de programación
             Java. Existe además un número importante de
@@ -236,11 +236,12 @@
 
 
   <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
+
+  <!--BOOTSTRAP-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+  crossorigin="anonymous"></script>
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-  <script src="./js/main.js"></script>
+  <script src="../js/buscador.js"></script>
 </body>
 
 </html>

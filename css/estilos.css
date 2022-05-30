@@ -71,19 +71,29 @@ body{
   height: 700px;
 }
 
-/* CSS DE IDES.HTML*/
+/* IMAGENES DE CONTACTO*/
+
+.image-contacto{
+  margin: 50px;
+  width: 1000px;
+  height: 50px;
+}
 
 /* EDICION DE LA TABLA DONDE ESTAN LOS IDES */
 .image-ides{
   margin-right: 20px;
   margin-bottom: 20px;
-  width: 220px;
-  height: 200px;
+  width: 950px;
+  height: 800px;
+  vertical-align: middle;
   float: left;
 }
 
 .parrafo-ides{
-  margin-right: 50px;
+  margin: 150px;
+  vertical-align: middle;
+  width: 1000px;
+  
 }
 
 .margin-table{
@@ -98,8 +108,22 @@ EDICION DE LA TABLA DE APLICACIONES GRATUITAS
 .image-aplicacionesG{
   margin-right: 20px;
   margin-bottom: 20px;
-  width: 200px;
-  height: 120px;
+  width: 1000px;
+  height: 500px;
+  vertical-align: middle;
+  float: left;
+}
+
+/*
+EDICION DE LA TABLA DE JUEGOS DE ACCION
+*/
+
+.image-accion{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 1000px;
+  height: 500px;
+  vertical-align: middle;
   float: left;
 }
 
@@ -118,7 +142,6 @@ EDICION DE BOTONES DE LA PAGINA
 .btn-margin{
   margin: 50px;
 }
-
 
 
 /*
