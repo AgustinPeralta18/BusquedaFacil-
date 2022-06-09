@@ -2,12 +2,16 @@
 
 include '../BusquedaFacil--main/php/conexion.php';
 
-
+//Seleccionamos Nickname de la base de datos
 $sql = "SELECT Nickname,id from usuarios";
+//prepara la consulta
 $user = $dbh->prepare($sql);
+//se ejecuta la consulta que en este caso se deposita en la variable user
 $user->execute();
+//asigna la variable
 $resultado = $user->fetchAll();
-
+//accedemos a la variable bidimensional de NICKNAME
+$nickname = $resultado[0]['Nickname'];
 
 ?>
 
@@ -85,7 +89,7 @@ $resultado = $user->fetchAll();
           <a href="./login.html">
           <?php
            //var_dump(implode(",", ));
-           print_r($resultado[0]); 
+           print_r($nickname); 
           
 
           ?>

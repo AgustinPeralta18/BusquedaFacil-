@@ -1,7 +1,7 @@
 <?php
-//declaracion de las variables donde se guardaran los valores de la conexion
+//CONEXION A PHP PURO Y DURO
 
-$servidor = "localhost";
+$servidor = "localhost"; 
 $usuario = "root";
 $password = "";
 $bd = "usuarios";
