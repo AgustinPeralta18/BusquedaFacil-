@@ -1,3 +1,18 @@
+<?php 
+
+include '../BusquedaFacil--main/php/conexion.php';
+
+
+$sql = "SELECT Nickname,id from usuarios";
+$user = $dbh->prepare($sql);
+$user->execute();
+$resultado = $user->fetchAll();
+
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -67,8 +82,15 @@
         </ul>
 
         <span class="navbar-text m-2">
-          <a href="./login.html">Iniciar Sesion</a>
-          <a href="./register.html">Registrarse</a>
+          <a href="./login.html">
+          <?php
+           //var_dump(implode(",", ));
+           echo $resultado[0];
+          
+
+          ?>
+          </a>
+
         </span>
   
 

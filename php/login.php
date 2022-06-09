@@ -23,6 +23,7 @@ try{
         throw new Error('Email o contraseña inválidos'); 
     }
 
+
     header("Location:http://localhost/busquedaFacil--main");
 
 }catch(Throwable $e){
