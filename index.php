@@ -85,7 +85,7 @@ $resultado = $user->fetchAll();
           <a href="./login.html">
           <?php
            //var_dump(implode(",", ));
-           echo $resultado[0];
+           print_r($resultado[0]); 
           
 
           ?>
