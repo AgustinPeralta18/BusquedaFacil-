@@ -1,15 +1,8 @@
 <?php
-//CONEXION A PHP PURO Y DURO
 
-$servidor = "localhost"; 
-$usuario = "root";
-$password = "";
-$bd = "usuarios";
+$conexion = mysqli_connect("localhost", "root", "", "usuarios");
+mysqli_set_charset($conexion, "utf8");
 
-try {
-    $dbh = new PDO("mysql:host=$servidor;dbname=$bd", $usuario, $password);
-} catch (Exception $e) {
-    echo $e -> getMessage();
-}
+
 
 ?>

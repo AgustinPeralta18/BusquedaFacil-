@@ -1,3 +1,18 @@
+<?php
+
+
+
+session_start();
+if(!isset($_SESSION['Email'])){
+  echo'
+    <script>
+      alert("Por favor, debes iniciar sesion");
+      window.location = "http://localhost/busquedaFacil--main/login.php";
+    </script>
+  ';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +20,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terror</title>
+  <title>Estrategia</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/estilos.css">
@@ -17,7 +32,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">
+      <a class="navbar-brand" href="../index.php">
         <img src="../recursos/busqueda.png" alt="" width="24" height="24" class="d-inline-block align-text-top">
         Busqueda Facil
       </a>
@@ -30,7 +45,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="../index.php">Inicio</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -39,8 +54,8 @@
               Aplicaciones
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="./paginas/Ides.html">Ides</a></li>
-              <li><a class="dropdown-item" href="./paginas/aplicacionesG.html">Aplicaciones</a></li>
+              <li><a class="dropdown-item" href="./paginas/Ides.php">Ides</a></li>
+              <li><a class="dropdown-item" href="./paginas/aplicacionesG.php">Aplicaciones</a></li>
             </ul>
           </li>
 
@@ -51,15 +66,15 @@
               Juegos
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="./accion.html">Accion</a></li>
-              <li><a class="dropdown-item" href="./aventura.html">Aventura</a></li>
-              <li><a class="dropdown-item" href="./terror.html">Terror</a></li>
-              <li><a class="dropdown-item" href="./estrategia.html">Estrategia</a></li>
+              <li><a class="dropdown-item" href="./accion.php">Accion</a></li>
+              <li><a class="dropdown-item" href="./aventura.php">Aventura</a></li>
+              <li><a class="dropdown-item" href="./terror.php">Terror</a></li>
+              <li><a class="dropdown-item" href="./estrategia.php">Estrategia</a></li>
             </ul>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="./ayuda.html">Ayuda</a>
+            <a class="nav-link active" href="./ayuda.php">Ayuda</a>
           </li>
 
         </ul>
@@ -68,6 +83,7 @@
       </div>
     </div>
   </nav>
+
 
   <!-- FONDO IMAGENES-->
 
@@ -84,35 +100,35 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a href="https://store.steampowered.com/app/1721470/Poppy_Playtime/"><img src="../recursos/juegos/poppy.jpg"
+        <a href="https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/"><img src="../recursos/juegos/heartsofiron.jpg"
             class="d-block w-100" height="800" width="500" alt="..."></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="text-bg-dark">Poppy Playtime</h5>
-          <p class="text-bg-dark">Sumergite en una fabrica de jueguetes abandonada</p>
+          <h5 class="text-bg-dark">Hearts Of Iron IV</h5>
+          <p class="text-bg-dark">Elige cualquier pais y conquista el mundo!</p>
         </div>
       </div>
       <div class="carousel-item">
-        <a href="https://store.steampowered.com/app/105600/Terraria/"><img src="../recursos/juegos/little.jpg"
+        <a href="https://store.steampowered.com/app/214950/Total_War_ROME_II__Emperor_Edition/"><img src="../recursos/juegos/totalwar.jpeg"
             class="d-block w-100" height="800" width="500" alt="..."></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="text-bg-dark">Little Nightmares</h5>
-          <p class="text-bg-dark">Embárcate en una lúgubre aventura</p>
+          <h5 class="text-bg-dark">Total War: Rome 2</h5>
+          <p class="text-bg-dark">Conquista el mundo antiguo</p>
         </div>
       </div>
       <div class="carousel-item">
-        <a href="https://www.warframe.com/es"><img src="../recursos/juegos/Phasmophobia.jpg" class="d-block w-100"
+        <a href="https://store.steampowered.com/app/919640/Steel_Division_2/?l=spanish"><img src="../recursos/juegos/steel.jpg" class="d-block w-100"
             height="800" width="500" alt="..."></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="text-bg-dark">Phasmophobia</h5>
-          <p class="text-bg-dark">El co-op de horror psicologico</p>
+          <h5 class="text-bg-dark">Steel Division 2</h5>
+          <p class="text-bg-dark">Steel Division 2 desafía los límites de la experiencia de estrategia en tiempo real</p>
         </div>
       </div>
       <div class="carousel-item">
-        <a href="https://store.steampowered.com/app/1599340/Lost_Ark/?l=latam"><img src="../recursos/juegos/freddy.jpeg"
+        <a href="https://store.steampowered.com/app/236850/Europa_Universalis_IV/"><img src="../recursos/juegos/europauniversalis.jpg"
             class="d-block w-100" height="800" width="500" alt="..."></a>
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="text-bg-dark">Five Nights at Freddy's</h5>
-          <p class="text-bg-dark">Cuida un salon de cumpleaños embrujado</p>
+          <h5 class="text-bg-dark">Europa Universalis IV</h5>
+          <p class="text-bg-dark">Gobierna tu territorio y domina el mundo con una libertad</p>
         </div>
       </div>
     </div>
@@ -128,81 +144,85 @@
 
 
   <!--TITULO-->
-  <h1 class="text-center titulos blockquote fs-2">Terror</h1>
+  <h1 class="text-center titulos blockquote fs-2">Estrategia</h1>
 
   <!-- TABLA DE IDES -->
   <table class="table-primary border-3 margin-table">
 
     <thead>
-      <!-- POPPY PLAYTIME -->
+      <!-- HEARTS OF IRON IV -->
       <tr>
         <th scope="col">
-          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Poppy Playtime</h2>
-          <p class="parrafo-ides"><img src="../recursos/juegos/poppy.jpg" class="image-accion" alt="..."><br>
-            Poppy Playtime es un videojuego de terror y puzzles desarrollado y publicado por el desarrollador
-            independiente MOB Games.
+          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Hearts Of Iron IV</h2>
+          <p class="parrafo-ides"><img src="../recursos/juegos/heartsofiron.jpg" class="image-accion" alt="..."><br>
+            ¡Tenemos la victoria al alcance de la mano! 
+            Tu capacidad para liderar tu nación es tu arma principal. En el juego de estrategia Hearts of Iron IV podrás
+            ponerte el mando de cualquier nación de la II Guerra Mundial, el conflicto más fascinante de la historia mundial. 
           </p>
         </th>
-        <th scope="col"><a href="https://store.steampowered.com/app/1721470/Poppy_Playtime/?l=spanish"><button
+        <th scope="col"><a href="https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/"><button
               type="button" class="btn btn-outline-dark btn-margin">Descargar</button></a></th>
-        <th scope="col"><a href="https://store.steampowered.com/app/1721470/Poppy_Playtime/?l=spanish"><button
+        <th scope="col"><a href="https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/"><button
               type="button" class="btn btn-outline-info">Pagina Oficial</button></a></th>
 
 
       </tr>
 
-      <!-- Little Nightmares -->
+      <!-- TOTAL WAR -->
       <tr>
         <th scope="col">
-          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Little Nightmares</h2>
-          <p class="parrafo-ides"><img src="../recursos/juegos/little.jpg" class="image-accion" alt="..."><br>
-            Enfréntate a tus miedos de la infancia en esta oscura y extravagante historia, ambientada en un mundo
-            inmersivo de gran sensibilidad, historia interactiva y destacado diseño sonoro.
-            Descubre los nauseabundos secretos de Las Fauces y sobrevive a las atenciones de sus monstruosos residentes
-            mientras intentas ayudar a Six a escapar al mundo exterior.
-
+          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Total War: Rome 2</h2>
+          <p class="parrafo-ides"><img src="../recursos/juegos/totalwar.jpeg" class="image-accion" alt="..."><br>
+            Contiene un sistema político mejorado, cadenas de construcción renovadas, batallas reequilibradas y mejores gráficos tanto en campaña como en batalla. 
           </p>
         </th>
 
-        <th scope="col"><a href="https://es.bandainamcoent.eu/little-nightmares/little-nightmares"><button type="button"
+        <th scope="col"><a href="https://store.steampowered.com/app/214950/Total_War_ROME_II__Emperor_Edition/"><button type="button"
               class="btn btn-outline-dark btn-margin">Descargar</button></a></th>
-        <th scope="col"><a href="https://es.bandainamcoent.eu/little-nightmares/little-nightmares"><button type="button"
+        <th scope="col"><a href="https://store.steampowered.com/app/214950/Total_War_ROME_II__Emperor_Edition/"><button type="button"
               class="btn btn-outline-info">Pagina
               Oficial</button></a></th>
 
 
       </tr>
 
-      <!-- INTELLIJ IDEA -->
+      
+
+      <!-- STEEL DIVISION -->
+      <tr>
+        <th scope="col">
+          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Steel Division</h2>
+          <p class="parrafo-ides"><img src="../recursos/juegos/steel.jpg" class="image-accion" alt="..."><br>
+            Steel Division 2 es un juego de estrategia en tiempo real ambientado en el frente oriental durante la Segunda Guerra Mundial. 
+            Incorpora gestión del ejército por turnos a escala 1:1 y batallas tácticas en tiempo real con miles de hombres a tus órdenes. 
+          </p>
+        </th>
+        <th scope="col"><a href="https://store.steampowered.com/app/919640/Steel_Division_2/"><button
+              type="button" class="btn btn-outline-dark btn-margin">Descargar</button></a></th>
+        <th scope="col"><a href="https://store.steampowered.com/app/919640/Steel_Division_2/"><button
+              type="button" class="btn btn-outline-info">Pagina
+              Oficial</button></a>
+      </th>
+
+      <!-- EUROPA UNIVERSALIS IV -->
       <tr>
         <th scope="row">
-          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Phasmophobia</h2>
-          <p class="parrafo-ides"><img src="../recursos/juegos/Phasmophobia.jpg" class="image-accion" alt="..."><br>
-            Phasmophobia es un videojuego de terror independiente desarrollado y publicado por Kinetic Games.
+          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Europa Universalis IV</h2>
+          <p class="parrafo-ides"><img src="../recursos/juegos/europauniversalis.jpg" class="image-accion" alt="..."><br>
+            Europa Universalis IV te permite controlar una nación a lo largo de cuatro siglos dramáticos. Gobierna tu territorio y domina el mundo con una libertad, una profundidad y 
+            una precisión histórica sin precedentes. Reescribe la historia del mundo y construye un imperio para la posteridad. 
           </p>
         </th>
-        <th scope="col"><a href="https://store.steampowered.com/app/739630/Phasmophobia/"><button type="button"
+        <th scope="col"><a href="https://store.steampowered.com/app/236850/Europa_Universalis_IV/"><button type="button"
               class="btn btn-outline-dark btn-margin">Descargar</button></a></th>
-        <th scope="col"><a href="https://store.steampowered.com/app/739630/Phasmophobia/"><button type="button"
+        <th scope="col"><a href="https://store.steampowered.com/app/236850/Europa_Universalis_IV/"><button type="button"
               class="btn btn-outline-info">Pagina
               Oficial</button></a></th>
 
       </tr>
 
-      <!-- NETBEANS -->
-      <tr>
-        <th scope="col">
-          <h2 class="p-3 fs-2 border-top border-bottom border-dark border-3">Five Nights at Freddy's</h2>
-          <p class="parrafo-ides"><img src="../recursos/juegos/freddy.jpeg" class="image-accion" alt="..."><br>
-            Five Nights at Freddy's es una franquicia de medios basada en una serie de videojuegos de terror
-            independientes, creada, diseñada, desarrollada y publicada por Scott Cawthon
-          </p>
-        </th>
-        <th scope="col"><a href="https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/?l=spanish"><button
-              type="button" class="btn btn-outline-dark btn-margin">Descargar</button></a></th>
-        <th scope="col"><a href="https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/?l=spanish"><button
-              type="button" class="btn btn-outline-info">Pagina
-              Oficial</button></a></th>
+      
+
 
         <!-- FILA DE MAS PARA AÑADIR LA ULTIMA LINEA QUE QUEDE MAS LINDO-->
       <tr>

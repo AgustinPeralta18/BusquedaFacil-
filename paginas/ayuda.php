@@ -1,3 +1,18 @@
+<?php
+
+
+
+session_start();
+if(!isset($_SESSION['Email'])){
+  echo'
+    <script>
+      alert("Por favor, debes iniciar sesion");
+      window.location = "http://localhost/busquedaFacil--main/login.php";
+    </script>
+  ';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +30,7 @@
     <!-- MENU -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">
+            <a class="navbar-brand" href="../index.php">
                 <img src="../recursos/busqueda.png" alt="" width="24" height="24" class="d-inline-block align-text-top">
                 Busqueda Facil
             </a>
@@ -29,7 +44,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="../index.php">Inicio</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -38,8 +53,8 @@
                             Aplicaciones
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="./paginas/Ides.html">Ides</a></li>
-                            <li><a class="dropdown-item" href="./paginas/aplicacionesG.html">Aplicaciones</a></li>
+                            <li><a class="dropdown-item" href="./paginas/Ides.php">Ides</a></li>
+                            <li><a class="dropdown-item" href="./paginas/aplicacionesG.php">Aplicaciones</a></li>
                         </ul>
                     </li>
 
@@ -50,10 +65,10 @@
                             Juegos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="./accion.html">Accion</a></li>
-                            <li><a class="dropdown-item" href="./aventura.html">Aventura</a></li>
-                            <li><a class="dropdown-item" href="./terror.html">Terror</a></li>
-                            <li><a class="dropdown-item" href="./estrategia.html">Estrategia</a></li>
+                            <li><a class="dropdown-item" href="./accion.php">Accion</a></li>
+                            <li><a class="dropdown-item" href="./aventura.php">Aventura</a></li>
+                            <li><a class="dropdown-item" href="./terror.php">Terror</a></li>
+                            <li><a class="dropdown-item" href="./estrategia.php">Estrategia</a></li>
                         </ul>
                     </li>
 

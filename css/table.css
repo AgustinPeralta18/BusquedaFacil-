@@ -1,0 +1,10 @@
+body{
+    width: auto;
+    height: auto;
+    background-image: url(../recursos/software.jpg);
+}
+
+
+.boton-confirmar{
+    margin: 40px;
+}

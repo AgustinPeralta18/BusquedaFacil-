@@ -13,9 +13,7 @@ try{
     //Aca llamamos a la base de datos y seleccionamos id, email, password de la bd creada llamada usuarios
     $sql = "INSERT INTO usuarios (Nombre, Nickname, Email, Password) VALUES ('$name', '$nickname', '$email', '$passwordHash');";
     //llamamos a la consulta
-    $query = $dbh->prepare($sql);
-    //ejecutamos la consulta
-    $query->execute();
+    $resultado = mysqli_query($conexion, $sql);
     //Cuando se termina el registro y no hay ningun lo mandamos a la pagina de login
     header("Location:http://localhost/busquedaFacil--main/login.html");
 }catch(PDOException $e){//Control de errores

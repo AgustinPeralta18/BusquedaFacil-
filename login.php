@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +25,7 @@
 
 <body>
 
-
+    <a href=""></a>
     <div class="container   w-75 bg-dark mt-5 rounded shadow">
         <div class="row align-items-stretch">
             <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
@@ -60,7 +61,7 @@
                 
 
                 <div class="my-3 text-white">
-                    <span>No tienes cuenta? <a href="./register.html">Registrarse</a></span> <br>
+                    <span>No tienes cuenta? <a href="./register.php">Registrarse</a></span> <br>
                 </div>
 
 
