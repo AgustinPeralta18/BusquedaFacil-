@@ -2,6 +2,6 @@
 
 session_start();
 session_destroy();
-header("location:http://localhost/busquedaFacil--main/login.php");
+header("location:http://localhost/busquedaFacil--main/login.html");
 
 ?>

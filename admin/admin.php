@@ -1,5 +1,12 @@
+<?php
 
+session_start();
 
+if(!$_SESSION['Admin']){
+    header('Location: http://localhost/busquedaFacil--main/index.php');
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +40,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="../index.php">Inicio</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -41,8 +48,8 @@
                             Aplicaciones
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="./paginas/Ides.html">Ides</a></li>
-                            <li><a class="dropdown-item" href="./paginas/aplicacionesG.html">Aplicaciones</a></li>
+                            <li><a class="dropdown-item" href="../paginas/Ides.php">Ides</a></li>
+                            <li><a class="dropdown-item" href="../paginas/aplicacionesG.php">Aplicaciones</a></li>
                         </ul>
                     </li>
 
@@ -52,28 +59,24 @@
                             Juegos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="./paginas/accion.html">Accion</a></li>
-                            <li><a class="dropdown-item" href="./paginas/aventura.html">Aventura</a></li>
-                            <li><a class="dropdown-item" href="./paginas/terror.html">Terror</a></li>
-                            <li><a class="dropdown-item" href="./paginas/estrategia.html">Estrategia</a></li>
+                            <li><a class="dropdown-item" href="../paginas/accion.php">Accion</a></li>
+                            <li><a class="dropdown-item" href="../paginas/aventura.php">Aventura</a></li>
+                            <li><a class="dropdown-item" href="../paginas/terror.php">Terror</a></li>
+                            <li><a class="dropdown-item" href="../paginas/estrategia.php">Estrategia</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="./paginas/ayuda.html">Ayuda</a>
+                        <a class="nav-link active" href="../paginas/ayuda.php">Ayuda</a>
                     </li>
                 </ul>
 
                 <span class="navbar-text m-2">
-                    <a href="../php/login.php">
-                        
+                    <a href=".../php/login.php">
+
                     </a>
                 </span>
-                <span class="navbar-text m-2">
-                    <a href="./admin/admin.html">
-                        Administrar
-                    </a>
-                </span>
+
 
 
 
@@ -82,10 +85,32 @@
     </nav>
 
     <?php
-    
+
     require(__DIR__ . '/table.php');
 
     ?>
+
+    <script>
+        async function editUser(id, oldName, oldNickname, oldEmail) {
+            const name = prompt("Inserte el nuevo nombre");
+            const nickname = prompt("Inserte el nuevo nickname");
+            const email = prompt("Inserte el nuevo email");
+            let data = new FormData();
+
+            data.set('id', id);
+            data.set('Nombre', name);
+            data.set('Nickname', nickname);
+            data.set('Email', email);
+
+            let response = await fetch('http://localhost/busquedaFacil--main/admin/actualizar.php', {
+                method: "POST",
+                body: data
+            });
+
+            
+
+        }
+    </script>
 
 
 
@@ -95,7 +120,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="./js/main.js"></script>
-    
+
 </body>
 
 </html>

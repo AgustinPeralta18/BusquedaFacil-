@@ -2,7 +2,31 @@
 
 include("../php/conexion.php");
 
-$usuarios = "SELECT * FROM usuarios";
+
+
+
+
+
+$pagina = 1;
+/* 
+Aca obtenemos el numero de paginas de la query de la url (?pagina=2)
+*/
+if (isset($_GET['pagina'])) { //si existe almacena pagina sino sigue siendo 1 por defecto
+    $pagina = $_GET['pagina'];
+}
+
+$max = 3; //maximo de resultados que se van a mostrar
+$comienzo = ($pagina - 1) * $max; //desde donde empieza a filtrar la base de datos
+
+$query = mysqli_query($conexion, "SELECT * FROM usuarios"); //necesitamos la cantidad de usuarios de la base de datos para sacar el numero de paginas
+
+$cantidad = mysqli_num_rows($query); //haces que mysqli cuente cuantas filas hay en el query
+
+$maxPaginas = ceil($cantidad / $max);  //con ceil redondeas para arriba, por el for
+
+
+
+$usuarios = "SELECT * FROM usuarios LIMIT $comienzo,$max"; // Limit comienzo en 3, max 3 porque vamos a decir cuantos lugares aparecen 
 
 
 
@@ -36,35 +60,50 @@ $usuarios = "SELECT * FROM usuarios";
             echo '<th scope="row">' . $row["id"] . '</th>';
             echo '<td id="' . $oldName . '">' . $row["Nombre"] . '</td>';
             echo '<td id="' . $oldNickname . ' ">' . $row["Nickname"] . '</td>';
-            echo '<td id="'. $oldEmail .'">' . $row["Email"] . '</td>';
+            echo '<td id="' . $oldEmail . '">' . $row["Email"] . '</td>';
             echo '<td>';
             echo '<div class="d-grid gap-2 d-md-flex justify-content-md-end">';
-            echo '<a onclick="' . "editUser($id,$oldName, $oldNickname, $oldEmail)" . '">Editar</a>';
-            echo '<a href="eliminar.php?id='.$row["id"].' class="delete">Eliminar</a>';
+            echo '<button onclick="' . "editUser($id,$oldName, $oldNickname, $oldEmail)" . '">Editar</button>';
+            echo '<a href="eliminar.php?id=' . $row["id"] . ' class="delete">Eliminar</a>';
             echo '</td>';
             echo '</div>';
             echo '</tr>';
         }
         ?>
 
+
+
     </tbody>
 </table>
 
-<script>
-    async function editUser(id, oldName, oldNickname, oldEmail){
-        const name = prompt("Inserte el nuevo nombre");     
-        const nickname = prompt("Inserte el nuevo nickname");
-        const email = prompt("Inserte el nuevo email");
+<footer>
+    <nav aria-label="...">
+        <ul class="pagination pagination-sm">
+            <?php
+            if ($pagina > 1) {
+                for ($i = 1; $i < $pagina; $i++) { //esto para dibujar las paginas anteriores a la pagina actual, o sea que aparezcan 1 2 
+            ?>
+                    <li class="page-item"><a class="page-link" href="http://localhost/busquedaFacil--main/admin/admin.php?pagina=<?php echo $i ?>"><?php echo $i ?></a></li>
+            <?php
+                }
+            }
+            ?>
+            <li class="page-item active" aria-current="page">
+                <span class="page-link"><?php echo $pagina ?></span>
+            </li>
+            <?php
+            
+                for ($i = $pagina+1; $i < $maxPaginas+1; $i++) { //esto para dibujar pagina siguiente 
+            ?>
+                    <li class="page-item"><a class="page-link" href="http://localhost/busquedaFacil--main/admin/admin.php?pagina=<?php echo $i ?>"><?php echo $i ?></a></li>
+            <?php
+                }
+            
+            ?>
 
-        let data = new FormData();
+            
+        </ul>
+    </nav>
+</footer>
 
-        data.set('id', id);
-        data.set('Nombre', name);
-        data.set('Nickname', nickname);
-        data.set('Email', email); 
 
-        let response = await fetch('http://localhost/busquedaFacil--main/admin/actualizar.php', {method: "POST", body:data});
-
-        let body = await response.json();
-    }
-</script>

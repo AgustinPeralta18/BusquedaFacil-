@@ -4,13 +4,11 @@
 
 session_start();
 if(!isset($_SESSION['Email'])){
-  echo'
-    <script>
-      alert("Por favor, debes iniciar sesion");
-      window.location = "http://localhost/busquedaFacil--main/login.php";
-    </script>
-  ';
+  header('Location:http://localhost/busquedaFacil--main/login.html');
 }
+
+
+
 
 ?>
 
@@ -82,11 +80,13 @@ if(!isset($_SESSION['Email'])){
           <a href="./php/desconectar.php">
 
             Desconectar
-            
+
           </a>
 
         </span>
         <span class="navbar-text m-2">
+
+          
           <a href="./admin/admin.php">
             Administrar
           </a>
