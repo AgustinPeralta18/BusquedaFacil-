@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!$_SESSION['Admin']){
+if (!$_SESSION['Admin']) {
     header('Location: http://localhost/busquedaFacil--main/index.php');
 }
 
@@ -90,27 +90,29 @@ if(!$_SESSION['Admin']){
 
     ?>
 
-    <script>
-        async function editUser(id, oldName, oldNickname, oldEmail) {
-            const name = prompt("Inserte el nuevo nombre");
-            const nickname = prompt("Inserte el nuevo nickname");
-            const email = prompt("Inserte el nuevo email");
-            let data = new FormData();
+    <form action="../php/datosImagenes.php" method="POST" enctype="multipart/form-data">
+        <table class="table">
+            <tr>
+                <td>
+                    <label for="imagen">Imagen</label>
+                    <input type="file" name="imagen" size="20">
+                    <td colspan="2" style="text-align:start "><input type="submit" value="Insertar Imagen"></td>
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr>
+                
+            </tr>
 
-            data.set('id', id);
-            data.set('Nombre', name);
-            data.set('Nickname', nickname);
-            data.set('Email', email);
+        </table>
 
-            let response = await fetch('http://localhost/busquedaFacil--main/admin/actualizar.php', {
-                method: "POST",
-                body: data
-            });
+    </form>
 
-            
 
-        }
-    </script>
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 include("../php/conexion.php");
 
-if($_POST){
+
     $idusuario = $_POST['id'];
     $nombre = $_POST['Nombre'];
     $email = $_POST['Email'];
@@ -14,7 +14,7 @@ if($_POST){
     }catch(mysqli_sql_exception $err){
         echo json_encode(false);
     }
-}
+
 
 ?>
 

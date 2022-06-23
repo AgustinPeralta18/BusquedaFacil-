@@ -52,6 +52,7 @@ $usuarios = "SELECT * FROM usuarios LIMIT $comienzo,$max"; // Limit comienzo en 
 
         while ($row = mysqli_fetch_assoc($resultado)) {
             $id = $row['id'];
+
             $oldName = $row['Nombre'];
             $oldNickname = $row['Nickname'];
             $oldEmail = $row['Email'];
@@ -62,8 +63,8 @@ $usuarios = "SELECT * FROM usuarios LIMIT $comienzo,$max"; // Limit comienzo en 
             echo '<td id="' . $oldNickname . ' ">' . $row["Nickname"] . '</td>';
             echo '<td id="' . $oldEmail . '">' . $row["Email"] . '</td>';
             echo '<td>';
-            echo '<div class="d-grid gap-2 d-md-flex justify-content-md-end">';
-            echo '<button onclick="' . "editUser($id,$oldName, $oldNickname, $oldEmail)" . '">Editar</button>';
+            echo '<div class="d-grid gap-2 d-md-flex">';
+            echo '<button onclick="' . "editUser('$id','$oldName', '$oldNickname', '$oldEmail')" . '">Editar</button>';
             echo '<a href="eliminar.php?id=' . $row["id"] . ' class="delete">Eliminar</a>';
             echo '</td>';
             echo '</div>';
@@ -105,5 +106,36 @@ $usuarios = "SELECT * FROM usuarios LIMIT $comienzo,$max"; // Limit comienzo en 
         </ul>
     </nav>
 </footer>
+
+<script>
+        async function editUser(id, oldName, oldNickname, oldEmail) {
+            console.log(id, oldName, oldNickname, oldEmail);
+            
+            const name = prompt("Inserte el nuevo nombre");
+            const nickname = prompt("Inserte el nuevo nickname");
+            const email = prompt("Inserte el nuevo email");
+
+            let data = new FormData();
+
+            data.set('id', id);
+            data.set('Nombre', name);
+            data.set('Nickname', nickname);
+            data.set('Email', email);
+
+            let response = await fetch('http://localhost/busquedaFacil--main/admin/actualizar.php', {
+                method: "POST",
+                body: data
+            });
+
+            if(!response){
+                alert("te la mandaste");
+            }
+
+            document.getElementById(`${oldName}`).innerText = name;
+            document.getElementById(`${oldNickname}`).innerText = nickname;
+            document.getElementById(`${oldEmail}`).innerText = email;
+
+        }
+    </script>
 
 
